@@ -4,6 +4,8 @@ __pycache__/
 *.pth
 *.pt
 submission.csv
+history.csv
+runs/
 train.npz
 validation.npz
 test.npz

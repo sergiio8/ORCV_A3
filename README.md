@@ -16,19 +16,29 @@ We will be using the ten-class CIFAR-10 dataset. The training and validation ima
 
 #### Training and validating your model
 
-Open `assignment3_baselines.ipynb` to train and validate your model. On Kaggle, attach the competition data and update `INPUT_DIR` if necessary. For local use, set:
+You can use either the notebook or the command-line script.
+
+To use the notebook, open `main_notebook.ipynb`. On Kaggle, attach the competition data and update `INPUT_DIR` if necessary. For local use, set:
 
 ```bash
 export RECVIS_INPUT_DIR=/path/to/competition/data
 export RECVIS_OUTPUT_DIR=/path/to/output
-jupyter lab assignment3_baselines.ipynb
+jupyter lab main_notebook.ipynb
 ```
 
-Modify `assignment3_baselines.ipynb` and `a3_utils.py` for your assignment, with the aim of improving the validation and Kaggle scores. The provided notebook includes a ResNet-18 baseline and examples for pretrained ResNets, ViT, linear probing, and OpenCLIP.
+To train from the command line, run:
+
+```bash
+python main.py --data /path/to/competition/data --output runs/resnet18 --epochs 10
+```
+
+For an ImageNet-pretrained model, add `--pretrained`. Run `python main.py --help` to see all options.
+
+Modify `main_notebook.ipynb`, `main.py`, and `a3_utils.py` for your assignment, with the aim of improving the validation and Kaggle scores. Both entry points provide a ResNet-18 baseline and support pretrained ResNets, ViT, and linear probing. The notebook also describes an optional OpenCLIP baseline.
 
 #### Evaluating your model on the test set
 
-Run the submission cell at the end of the notebook. It generates `submission.csv`, which you can upload to the private Kaggle competition website. The file must contain one integer label from 0 to 9 for every test ID.
+Run the submission cell at the end of the notebook, or let `main.py` finish training. Both generate `submission.csv`, which you can upload to the private Kaggle competition website. The file must contain one integer label from 0 to 9 for every test ID.
 
 #### Rules
 
