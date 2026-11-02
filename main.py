@@ -4,13 +4,23 @@ from __future__ import annotations
 
 import argparse
 import os
+import random
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import torch
 
-from a3_utils import CLASS_NAMES, build_model, freeze_backbone, make_loaders, predict, set_seed, train
+from data import CLASS_NAMES, make_loaders, predict
+from model import build_model, freeze_backbone, train
+
+
+def set_seed(seed: int) -> None:
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.benchmark = True
 
 
 def parse_args() -> argparse.Namespace:

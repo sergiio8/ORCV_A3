@@ -29,12 +29,12 @@ jupyter lab main_notebook.ipynb
 To train from the command line, run:
 
 ```bash
-python main.py --data /path/to/competition/data --output runs/resnet18 --epochs 10
+python main.py --data /path/to/competition/data --output runs/resnet18 --model resnet18 --epochs 10
 ```
 
 For an ImageNet-pretrained model, add `--pretrained`. Run `python main.py --help` to see all options.
 
-Modify `main_notebook.ipynb`, `main.py`, and `a3_utils.py` for your assignment, with the aim of improving the validation and Kaggle scores. Both entry points provide a ResNet-18 baseline and support pretrained ResNets, ViT, and linear probing. The notebook also describes an optional OpenCLIP baseline.
+Modify `main_notebook.ipynb`, `main.py`, `model.py`, and `data.py` for your assignment, with the aim of improving the validation and Kaggle scores. Both entry points provide a ResNet-18 baseline and support pretrained ResNets, ViT, and linear probing. The notebook also describes an optional OpenCLIP baseline.
 
 #### Evaluating your model on the test set
 
@@ -42,10 +42,10 @@ Run the submission cell at the end of the notebook, or let `main.py` finish trai
 
 #### Rules
 
-Open-source models, ImageNet-pretrained checkpoints, and external data are allowed if they are fully documented in the report. Proprietary or closed models and API-only services are prohibited. Do not obtain, reconstruct, manually annotate, or otherwise access the hidden test labels.
+Open-source models, pretrained checkpoints, and external data are allowed if they are fully documented in the report. Proprietary or closed models and API-only services are prohibited. Do not obtain, reconstruct, manually annotate, or otherwise access the hidden test labels.
 
 #### Acknowledgments
 
-The source-domain data is [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html), created by Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton. The distribution-shifted target subset was curated and processed for this assignment by Fernando Julio Cendra and Alexandros Benetatos.
+The source-domain data is [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html), created by Alex Krizhevsky, Vinod Nair, and Geoffrey Hinton.
 
 This starter is adapted from the [2024 RecVis Assignment 3 repository](https://github.com/willowsierra/recvis24_a3).
